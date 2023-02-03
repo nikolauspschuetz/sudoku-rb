@@ -91,6 +91,16 @@ def valid
       break
     end
   end
+  if v
+    # check that each box is valid
+    (0..2).each do |r|
+      (0..2).each do |c|
+        if !is_valid(get_box(r, c))
+          v = false
+          break
+      end
+    end
+  end
   v
 end
 
